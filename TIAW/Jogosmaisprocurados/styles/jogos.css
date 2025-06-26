@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", "Roboto", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Título principal */
+h1 {
+  font-family: "Roboto Flex", "Roboto", sans-serif;
+  font-weight: 420;
+  color: #000000;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  width: 90px;
+  height: auto;
+  margin-right: 16px;
+}

@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: "Open Sans", "Roboto", "sans-serif";
+    font-size: 20px;
+  }
+
+header {
+  background-color: #fff;
+  color: black;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  height: 75px;
+  font-family: "Roboto Flex", "Roboto", "sans-serif";
+  font-weight: 420;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+  margin-right: 16px;
+}
+
+.titulo{
+  font-size: 2em;
+  color: #000;
+  margin: 0; 
+
+}
+
+.cabecalho-conteudo{
+  display: flex;
+  align-items: center;      /* Alinha verticalmente */
+}
+
+
+header img {
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#perfil-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+}
+
+main {
+  display: flex;
+  height: calc(100vh - 80px);
+  font-size: 25px;
+  color: black;
+}
+
+.resumo {
+  background-color: rgb(241, 236, 236);
+  width: 40%;
+  height: 100%;
+  color: black;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.caixa-resumo {
+  background-color: #fff; /* branco com um pouco de transparência */
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: black;
+  text-align: left;
+}
+
+.caixa-resumo p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+
+.resumo img {
+  width: 500px;
+  border-radius: 60px;
+  margin-bottom: 1rem;
+  padding: 10px;
+  height: 350px;
+}
+
+.formulario {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.campo {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: right;
+  padding: 0 150px;
+}
+
+.campo label {
+  width: 100px;
+  align-items: right;
+  font-size: 25px;
+}
+
+.icon {
+  font-size: 45px; /* Ajuste o tamanho como preferir */
+}
+
+
+.campo select,
+.campo input {
+  background-color: rgb(158, 231, 86);
+  color: black;
+  border: none;
+  padding: 0.5rem;
+  width: 250px;
+  border-radius: 4px;
+  font-size: 25px;
+}
+
+@media (max-width: 768px) {
+main {
+flex-direction: column;
+}
+
+header img {
+  width: 100%;
+}
+
+.resumo, .formulario {
+width: 100%;
+}
+
+.campo {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.campo label {
+width: 100%;
+margin-bottom: 0.5rem;
+}
+
+.campo select,
+.campo input {
+width: 100%;
+}
+
+
+
+#perfil-icon {
+top: 10px;
+right: 10px;
+}
+}

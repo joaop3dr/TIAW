@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1716027000001,
+    "jogo": "League of Legends",
+    "nomeSala": "Time Lendário",
+    "usuarios": [
+      { "nome": "Akali", "rank": "Platina" },
+      { "nome": "Yasuo", "rank": "Ouro" },
+      { "nome": "Teemo", "rank": "Bronze" }
+    ]
+  },
+  {
+    "id": 1716027000002,
+    "jogo": "Valorant",
+    "nomeSala": "Headshot Masters",
+    "usuarios": [
+      { "nome": "Jett", "rank": "Diamante" },
+      { "nome": "Sova", "rank": "Ouro" },
+      { "nome": "Phoenix", "rank": "Prata" }
+    ]
+  },
+  {
+    "id": 1716027000003,
+    "jogo": "Call of Duty: Warzone",
+    "nomeSala": "Strike Squad",
+    "usuarios": [
+      { "nome": "Ghost", "rank": "Mestre" },
+      { "nome": "Soap", "rank": "Ouro" }
+    ]
+  },
+  {
+    "id": 1716027000004,
+    "jogo": "Rainbow Six",
+    "nomeSala": "Team Rainbow",
+    "usuarios": [
+      { "nome": "Thermite", "rank": "Prata" },
+      { "nome": "Ash", "rank": "Platina" },
+      { "nome": "Smoke", "rank": "Bronze" }
+    ]
+  }
+]

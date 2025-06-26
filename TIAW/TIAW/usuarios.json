@@ -1,0 +1,25 @@
+[
+  { "nome": "Ana", "pontos": 1200, "jogo": "Valorant" },
+  { "nome": "Bruno", "pontos": 3400, "jogo": "Valorant" },
+  { "nome": "Clara", "pontos": 4500, "jogo": "Valorant" },
+  { "nome": "Daniel", "pontos": 800, "jogo": "Valorant" },
+  { "nome": "Eduarda", "pontos": 2600, "jogo": "Valorant" },
+
+  { "nome": "Fábio", "pontos": 500, "jogo": "League of Legends" },
+  { "nome": "Gabriela", "pontos": 1500, "jogo": "League of Legends" },
+  { "nome": "Henrique", "pontos": 3300, "jogo": "League of Legends" },
+  { "nome": "Isabela", "pontos": 4800, "jogo": "League of Legends" },
+  { "nome": "João", "pontos": 2900, "jogo": "League of Legends" },
+
+  { "nome": "Karen", "pontos": 900, "jogo": "Call of Duty: Warzone" },
+  { "nome": "Lucas", "pontos": 3700, "jogo": "Call of Duty: Warzone" },
+  { "nome": "Marcela", "pontos": 4400, "jogo": "Call of Duty: Warzone" },
+  { "nome": "Nicolas", "pontos": 2200, "jogo": "Call of Duty: Warzone" },
+  { "nome": "Olívia", "pontos": 1200, "jogo": "Call of Duty: Warzone" },
+
+  { "nome": "Pedro", "pontos": 510, "jogo": "Rainbow Six Siege" },
+  { "nome": "Quésia", "pontos": 1900, "jogo": "Rainbow Six Siege" },
+  { "nome": "Rafael", "pontos": 3000, "jogo": "Rainbow Six Siege" },
+  { "nome": "Sabrina", "pontos": 4300, "jogo": "Rainbow Six Siege" },
+  { "nome": "Thiago", "pontos": 2500, "jogo": "Rainbow Six Siege" }
+]

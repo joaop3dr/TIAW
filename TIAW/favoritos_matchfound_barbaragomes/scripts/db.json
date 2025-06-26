@@ -1,0 +1,32 @@
+{
+  "jogos": [
+    { "nome": "Valorant", "imagem": "images/valorant.jpg" },
+    { "nome": "Free Fire", "imagem": "images/freefire.jpg" },
+    { "nome": "CS:GO", "imagem": "images/csgo.jpg" }
+  ],
+  "jogadores": [
+    { "nome": "Jogador1", "status": "online" },
+    { "nome": "Jogador2", "status": "offline" },
+    { "nome": "Jogador3", "status": "online" }
+  ],
+  "salas": [
+    {
+      "nome": "Seekers",
+      "participantes": 12,
+      "entradas": 5,
+      "imagem": "images/lol.jpg"
+    },
+    {
+      "nome": "VAVA",
+      "participantes": 8,
+      "entradas": 7,
+      "imagem": "images/valorant.jpg"
+    },
+    {
+      "nome": "Mirage",
+      "participantes": 10,
+      "entradas": 3,
+      "imagem": "images/csgo.jpg"
+    }
+  ]
+}

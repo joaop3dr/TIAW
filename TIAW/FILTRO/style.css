@@ -1,0 +1,106 @@
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo {
+    width: 90px;
+    height: auto;
+    margin-right: 16px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin: 0;
+}
+
+.projetos {
+    height: auto;
+    width: 100%;
+    align-items: center;
+}
+.objects{
+    background-color: #7DACED;
+    width: 100%;
+}
+.buttons {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+.box {
+    float: left;
+    width: 125px;
+    gap: 1rem;
+    line-height: 125px;
+    text-align: center;
+    margin: 10px;
+    display: none;
+}
+.img {
+    height: 150px;
+    width: auto;
+    padding: 5px;
+}
+.active {
+    display: block;
+}
+.accordion {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.accordion-item {
+    margin-bottom: 5px;
+}
+.accordion-header {
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    position: relative;
+}
+.accordion-header:hover {
+    background-color: #ddd;
+}
+.accordion-header::after {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+.accordion-content {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-content.show {
+    max-height: 200px;
+    padding: 10px;
+}
+.btn-filter {
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    margin: 5px 0;
+    text-align: left;
+    border: none;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-filter:hover {
+    background-color: #e9ecef;
+}

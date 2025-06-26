@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ranking de Usuários</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.theme-dark { background-color: #121212; color: white; }
+    .theme-dark .card { background-color: #1e1e1e; color: white; }
+  </style>
+</head>
+<body class="bg-light" id="body">
+  <header>
+        <a href="/TIAW/Homepage/index.html"><img src="/TIAW/Homepage/images/logo.png" alt="Logo MatchFound" class="logo"></a>
+        <h1>MatchFound</h1>
+    </header>
+
+    <div class="app-layout">
+
+  <div class="container mt-5" id="inicio">
+    <div class="text-center mb-4">
+      <h2>Bem-vindo ao Ranking de Usuários</h2>
+      <p>Descubra seu ranking jogando seus jogos favoritos!</p>
+      <!-- Botão para descobrir o ranking -->
+      <button id="descubraRankingBtn" class="btn btn-primary">Descubra seu Ranking</button>
+    </div>
+  </div>
+
+  <!-- Formulário para preencher os dados do usuário -->
+  <div id="formulario" class="container mt-5" style="display: none;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Ranking de Usuários</h2>
+
+      <!-- Menu de cores -->
+      <select id="tema" class="form-select w-auto">
+        <option value="light">Tema Claro</option>
+        <option value="dark">Tema Escuro</option>
+      </select>
+    </div>
+
+    <!-- Formulário -->
+    <form id="form" class="card p-4 shadow mb-4">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" id="nome" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="pontos" class="form-label">Pontuação:</label>
+        <input type="number" id="pontos" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="jogo" class="form-label">Selecione o jogo:</label>
+        <select id="jogo" class="form-select" required>
+          <option value="" disabled selected>Escolha o jogo</option>
+          <option value="Valorant">Valorant</option>
+          <option value="League of Legends">League of Legends</option>
+          <option value="Call of Duty: Warzone">Call of Duty: Warzone</option>
+          <option value="Rainbow Six Siege">Rainbow Six Siege</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Ver Meu Ranking</button>
+    </form>
+
+    <!-- Lista suspensa -->
+    <div class="accordion" id="rankingAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRanking" aria-expanded="true">
+            Ver Ranking Geral
+          </button>
+        </h2>
+        <div id="collapseRanking" class="accordion-collapse collapse show" data-bs-parent="#rankingAccordion">
+          <div class="accordion-body">
+            <div id="rankingTop" class="row g-3"></div>
+            <div id="rankingBottom" class="row g-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botão para limpar todos os cadastros -->
+    <button id="limparCadastrosBtn" class="btn btn-danger mt-4">Limpar Todos os Cadastros</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

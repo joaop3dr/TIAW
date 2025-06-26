@@ -1,0 +1,27 @@
+LEMBRETES DURANTE DESENVOLVIMENTO DO CHAT
+
+- Utilizei o WebSocket como protocolo de comunicação;
+- WebSocket é uma requisição, utiliza menos largura de banda e recursos do servidor,
+pois elimina a sobrecarga de cabeçalhos HTTP em cada requisição.;
+- Não esquecer de iniciar o servidor (npm) utilizando o comando npm start;
+- Verficar se será necessario dar o comando CD para acessar a pasta SRC para inicializar o servidor local;
+- Foi inserido o comando "dev": "node --watch src/server.js" para auxiliar a visualização do funcionamento
+do "servidor local";
+- Quando eu for fazer o deploy lembrar de subistituir a rota ws://localhost:8080 do script para o link
+gerado pelo site que irei utilizar no deploy, me indicaram o render;
+- "start": "node src/server.js" comando start feito para inicializar o servidor local;
+- .env utilizado para "mostrar" a porta a ser utilizada;
+- Incluir colunas, para selecionar conversar, cabeçalho padrao determinado pelo grupo;
+- Durante as ferias pegar esse projeto para tentar colocar cores RGB;
+- const wss = new WebSocketServer ({ port: process.env.PORT || 8080}) Comando para usar a porta informada
+no arquivo .env ou utilizar a porta padrao 8080;
+-  Math.floor arredendo o valor random gerado para baixo;
+- Math.random() gera valores aleatorios, mas pode gerar valores quebrados então em caso de esta trabalhando 
+com vetores lembrar de utilizar o Math.floor, para arrendondar o valor para baixo assim evitando de correr
+o risco de arredondar o valor para cima e ficar maior que a quantidade de espaço do vetor;
+- O rem (root em) é uma unidade de medida em CSS que é relativa ao tamanho da fonte do elemento
+raiz do documento;
+- O dvh é uma unidade de medida em CSS que representa "dynamic viewport height" (altura dinâmica da viewport).
+Essa unidade é especialmente útil para lidar com layouts responsivos em dispositivos móveis, onde a altura da
+viewport pode mudar devido à exibição ou ocultação da barra de endereços do navegador;
+

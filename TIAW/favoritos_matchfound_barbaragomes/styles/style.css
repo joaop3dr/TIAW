@@ -1,0 +1,400 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Flex", "Roboto", sans-serif;
+}
+
+body {
+  font-family: "Open Sans", "Roboto", sans-serif;
+}
+
+/* ============================= */
+/* Cabeçalho da tela              */
+/* ============================= */
+
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 75px;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+}
+
+.linha-separadora {
+  width: 2px;
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 1px;
+}
+.icone-favoritos {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* ============================= */
+/* Barra de pesquisa         */
+/* ============================= */
+
+.busca-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  width: 40%;
+  max-width: 300px;
+}
+
+#campoBusca {
+  padding-left: 45px; /* espaço pra não sobrepor a lupa */
+  transition: width 0.3s ease;
+}
+
+.btn-busca-esquerda {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.btn-busca-esquerda img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================= */
+/* Colunas por categorias     */
+/* ============================= */
+
+.card-container {
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80%;
+  min-height: 400px;
+}
+
+#coluna-jogadores .card-container,
+#coluna-jogos .card-container,
+#coluna-salas .card-container {
+  background-color: #7daced;
+  min-height: 430px;
+}
+
+.card-container h4 {
+  font-family: "Roboto Flex", sans-serif;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coluna-card {
+  flex: 0 0 30%;
+  max-width: 30%;
+  margin: 0 1.5%;
+}
+
+.linha-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2% 5%;
+}
+
+/* ============================= */
+/* Cards dos jogadores         */
+/* ============================= */
+
+.card-jogador {
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.info-jogador {
+  display: flex;
+  align-items: center;
+}
+
+.icone-jogador {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.nome-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.nome-status strong {
+  font-size: 14px;
+  color: #000;
+}
+
+.status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -15px;
+}
+
+.status.online {
+  background-color: #28a745;
+}
+
+.status.offline {
+  background-color: #dc3545;
+}
+
+.btn-convidar {
+  background-color: #008b51ec;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-convidar:hover {
+  background-color: #75a88c;
+}
+
+/* ============================= */
+/* Cards dos jogos            */
+/* ============================= */
+
+.card-jogo {
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.card-jogo img {
+  width: 150px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ============================= */
+/* Cards das Salas            */
+/* ============================= */
+
+.sala {
+  background-color: white;
+  color: #000;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sala-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.img-jogo-sala {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.sala-detalhes p,
+.sala-detalhes small {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+}
+
+.btn-entrar {
+  background-color: #5f5fab;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  height: fit-content;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.btn-chat {
+    background-color: #007bff; /* Cor de fundo do botão Chat */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 6px 12px; /* Espaçamento interno */
+    border-radius: 6px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-size: 12px; /* Tamanho da fonte */
+    height: fit-content; /* Altura ajustável */
+    white-space: nowrap; /* Não quebrar linha */
+    margin-left: 8px; /* Espaço entre os botões */
+}
+
+.btn-entrar:hover {
+  background-color: #8686b1;
+}
+
+/* ============================= */
+/* Lista dos favoritos   */
+/* ============================= */
+
+#favoritosJogadores,
+#favoritosJogos,
+#favoritosSalasMaisAcessadas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+#favoritosJogadores strong {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: black;
+}
+
+/* ============================= */
+/* Pdronização das cores */
+/* ============================= */
+
+#coluna-jogadores,
+#coluna-jogos,
+#coluna-salas {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+/* ============================= */
+/* Barra de notificação    */
+/* ============================= */
+
+.notificacao-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #7daced;
+  color: rgba(26, 26, 26, 0.897);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  z-index: 10000;
+  font-family: "Open Sans", sans-serif;
+}
+
+.icone-sino {
+  width: 20px;
+  height: 20px;
+}
+
+.titulo-barra {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Mensagem temporária ao lado do título */
+.mensagem-temporaria {
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* ============================= */
+/* Responsividade - TABLET E CELULAR */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .coluna-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .linha-cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 2%;
+  }
+
+  .card-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .busca-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  #campoBusca {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    pointer-events: none; /* impede clique quando escondido */
+  }
+
+  .busca-container.busca-ativa #campoBusca {
+    width: 150px;
+    opacity: 1;
+    padding-left: 45px;
+    margin-left: 8px;
+    border: 1px solid #ccc;
+    pointer-events: auto;
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fórum - Match Found</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="cabecalho-conteudo">
+    <a href="/TIAW/Homepage/index.html"><img src="image.png" alt="" class="logo"></a>
+    <h1 class="titulo">Fórum de Discussão</h1>
+    <button id="novo-topico">+</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="tabela-cabecalho">
+      <div class="col">Título</div>
+      <div class="col">Autor</div>
+      <div class="col">Data</div>
+    </section>
+
+    <section id="topicos" class="tabela-conteudo"></section>
+
+    <section id="mensagem-section" class="mensagem escondido">
+      <div class="mensagem-titulo">Mensagem</div>
+      <p id="mensagem"></p>
+      <button type="submit">Responder</button>
+    </section>
+
+    <section id="formulario-section" class="formulario escondido">
+      <h2>Novo Tópico</h2>
+      <form id="form-topico">
+        <input type="text" id="titulo" placeholder="Título" required />
+        <input type="text" id="autor" placeholder="Autor" required />
+        <textarea id="mensagem-texto" placeholder="Mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

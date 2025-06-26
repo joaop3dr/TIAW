@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Portal de Jogos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Cadastro de Usuário</h2>
+    <form id="cadastroForm">
+      <input type="text" id="newUser" placeholder="Novo Usuário" required>
+      <input type="password" id="newPass" placeholder="Nova Senha" required>
+      <button type="submit">Cadastrar</button>
+      <p id="cadastro-msg"></p>
+    </form>
+
+    <!-- Botão "Voltar" corrigido -->
+    <button type="button" onclick="window.location.href='login.html'" class="btn-cadastro">Voltar</button>
+  </div>
+
+  <script>
+    document.getElementById("cadastroForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const newUser = document.getElementById("newUser").value.trim();
+      const newPass = document.getElementById("newPass").value.trim();
+      const msg = document.getElementById("cadastro-msg");
+
+      if (newUser && newPass) {
+        // Salva localmente (simulação de cadastro)
+        localStorage.setItem("usuario", newUser);
+        localStorage.setItem("senha", newPass);
+        msg.style.color = "lime";
+        msg.textContent = "Cadastro realizado com sucesso!";
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Preencha todos os campos.";
+      }
+    });
+  </script>
+</body>
+</html>
