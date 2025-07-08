@@ -63,7 +63,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         alert(`Bem-vindo(a), ${user.nome}!`);
         localStorage.setItem('isLoggedIn', 'true');
         // Redireciona para área logada (se tiver)
-        window.location.href = '../Homepage/index.html';
+        window.location.href = '../index.html';
     } else {
         alert('Email ou senha incorretos!');
     }
