@@ -3,7 +3,7 @@ const dados = [
     "titulo": "Iniciando a discussão",
     "autor": "Pedro Amaral",
     "data": "09/05/2025",
-    "mensagem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    "mensagem": "Falha de comunicação com alguns usuarios"
   },
   {
     "titulo": "Dúvida sobre horários",
