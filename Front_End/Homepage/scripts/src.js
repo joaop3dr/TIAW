@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showLoginButton();
 
             // Opcional: Redirecionar para a página de login ou recarregar a página
-            window.location.href = '/Front_End/login-cadastro/index.html'; // Redireciona para a página de login
+            window.location.href = '/login-cadastro/index.html'; // Redireciona para a página de login
             // Ou: window.location.reload(); // Recarrega a página atual
         });
     }
