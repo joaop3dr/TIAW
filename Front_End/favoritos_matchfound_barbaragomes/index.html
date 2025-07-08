@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favoritos</title>
+
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.3.6-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="d-flex justify-content-between align-items-center p-3">
+      <div class="d-flex align-items-center">
+        <!-- Arquivo da logo MatchFound -->
+        <a href="/Front_End/Homepage/index.html"><img src="./images/logo.png" alt="Logo MatchFound" class="logo me-3" /><a href="/Homepage/index.html"></a>
+        <div class="linha-separadora mx-3"></div>
+        <img src="./images/fav.png" alt="Favoritos" class="icone-favoritos" />
+      </div>
+
+      <!-- Aba de pesquisa -->
+      <div class="busca-container position-relative">
+        <button id="botaoBusca" class="btn-busca-esquerda" type="button">
+          <img src="./images/search.png" alt="Buscar" />
+        </button>
+        <input
+          type="text"
+          id="campoBusca"
+          class="form-control ps-5"
+          placeholder="Pesquisar favoritos..."
+        />
+      </div>
+    </header>
+    <main class="container-fluid mt-4">
+      <div class="row justify-content-center px-3">
+        <!-- Coluna dos jogadores -->
+        <div
+          class="col-12 col-md-3 mx-md-2 mb-4 coluna-card"
+          id="coluna-jogadores"
+        >
+          <div class="p-3 rounded card-container container-jogadores">
+            <h4 class="mb-3 text-center text-white">Jogadores</h4>
+            <div id="favoritosJogadores"></div>
+          </div>
+        </div>
+
+        <!-- Coluna dos jogos-->
+        <div class="col-12 col-md-3 mx-md-2 mb-4 coluna-card" id="coluna-jogos">
+          <div class="p-3 rounded card-container container-jogos">
+            <h4 class="mb-3 text-center text-white">Jogos</h4>
+            <div id="favoritosJogos"></div>
+          </div>
+        </div>
+
+        <!-- Coluna das salas -->
+        <div class="col-12 col-md-3 mx-md-2 mb-4 coluna-card" id="coluna-salas">
+          <div class="p-3 rounded card-container container-salas">
+            <h4 class="mb-3 text-center text-white">Salas mais acessadas</h4>
+            <div id="favoritosSalasMaisAcessadas"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Barra de notificação -->
+    <div id="notificacaoBar" class="notificacao-bar">
+      <img
+        src="./images/notification.png"
+        alt="Notificação"
+        class="icone-sino"
+      />
+      <span class="titulo-barra">Notificações</span>
+      <span id="mensagemNotificacao" class="mensagem-temporaria"></span>
+    </div>
+
+    <!-- Scripts Gerais -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/script.js"></script>
+
+    <!-- Script da notificação -->
+    <script>
+      function mostrarNotificacao(texto) {
+        $("#mensagemNotificacao").text(texto);
+        $("#notificacaoBar").removeClass("d-none").fadeIn();
+
+        setTimeout(function () {
+          $("#notificacaoBar").fadeOut();
+        }, 5000); // fecha após 5 segundos
+      }
+
+      $(document).ready(function () {
+        // Quando clica em "Convidar"
+        $(".btn-convidar").on("click", function () {
+          const nomeJogador = $(this)
+            .closest(".card-jogador")
+            .find(".nome-jogador")
+            .text();
+          mostrarNotificacao(`Você convidou o ${nomeJogador}`);
+        });
+
+        // Quando clica em "Entrar"
+        $(".btn-entrar").on("click", function () {
+          const nomeSala = $(this)
+            .closest(".card-sala")
+            .find(".nome-sala")
+            .text();
+          mostrarNotificacao(`Você entrou na sala ${nomeSala}`);
+        });
+      });
+    </script>
+  </body>
+</html>

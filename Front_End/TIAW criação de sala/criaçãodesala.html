@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciador de Partidas Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="py-4">
+  <header>
+    <div class="container d-flex align-items-center">
+      <a href="/Front_End/Homepage/index.html"> <img src="/Front_End/images/logo.png" alt="Logo MatchFound" class="logo" /> </a>
+      <h1>MatchFound</h1>
+    </div>
+  </header>
+  
+  <main class="container">
+    <h1 class="mb-4">Gerenciador de Salas</h1>
+
+  <div class="mb-3">
+    <label for="jogo" class="form-label">Escolha o jogo:</label>
+    <select id="jogo" class="form-select">
+      <option>League of Legends</option>
+      <option>Valorant</option>
+      <option>Call of Duty: Warzone</option>
+      <option>Rainbow Six</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <input type="text" id="nomeSala" class="form-control" placeholder="Nome da sala">
+  </div>
+
+  <button class="btn btn-primary mb-4" onclick="criarSala()">Criar Sala</button>
+  <input type="file" id="importarArquivo" class="form-control mb-4" onchange="importarJSON()">
+
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <label for="filtroJogo" class="form-label">Filtrar por jogo:</label>
+      <select id="filtroJogo" class="form-select" onchange="atualizarExibicao()">
+        <option value="">Todos</option>
+        <option>League of Legends</option>
+        <option>Valorant</option>
+        <option>Call of Duty: Warzone</option>
+        <option>Rainbow Six</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="buscaNome" class="form-label">Buscar por nome da sala:</label>
+      <input type="text" id="buscaNome" class="form-control" placeholder="Ex: Time Lendário" oninput="atualizarExibicao()">
+    </div>
+  </div>
+
+  <h2>Salas Criadas</h2>
+  <div id="salasContainer"></div>
+
+  <script>
+    const ordemRanks = ["Ferro", "Bronze", "Prata", "Ouro", "Platina", "Diamante", "Mestre", "Grão-Mestre", "Desafiante"];
+    let salas = JSON.parse(localStorage.getItem('salas')) || [];
+
+    function criarSala() {
+      const jogo = document.getElementById('jogo').value;
+      const nomeSala = document.getElementById('nomeSala').value.trim();
+      if (!nomeSala) return alert("Insira um nome para a sala.");
+
+      const novaSala = {
+        id: Date.now(),
+        jogo,
+        nomeSala,
+        usuarios: []
+      };
+      salas.push(novaSala);
+      salvar();
+      atualizarExibicao();
+    }
+
+    function adicionarUsuario(salaId) {
+      const nome = prompt("Nome do usuário:");
+      if (!nome) return;
+      const rank = prompt("Rank do usuário (ex: Bronze, Prata, Ouro):");
+      if (!rank) return;
+
+      const sala = salas.find(s => s.id === salaId);
+      if (sala) {
+        sala.usuarios.push({ nome, rank });
+        salvar();
+        atualizarExibicao();
+      }
+    }
+
+    function removerUsuario(salaId) {
+      const sala = salas.find(s => s.id === salaId);
+      if (!sala || sala.usuarios.length === 0) return alert("Não há usuários para remover.");
+
+      const nomes = sala.usuarios.map(u => u.nome).join(", ");
+      const nome = prompt(`Digite o nome do usuário que deseja remover:\n[${nomes}]`);
+      if (!nome) return;
+
+      const index = sala.usuarios.findIndex(u => u.nome.toLowerCase() === nome.toLowerCase());
+      if (index >= 0) {
+        sala.usuarios.splice(index, 1);
+        salvar();
+        atualizarExibicao();
+      } else {
+        alert("Usuário não encontrado.");
+      }
+    }
+
+    function salvar() {
+      localStorage.setItem('salas', JSON.stringify(salas));
+    }
+
+    function classeDoJogo(nome) {
+      switch (nome) {
+        case "Valorant":
+          return "valorant";
+        case "League of Legends":
+          return "lol";
+        case "Call of Duty: Warzone":
+          return "warzone";
+        case "Rainbow Six":
+          return "rainbow";
+        default:
+          return "text-muted";
+      }
+    }
+
+    function atualizarExibicao() {
+      const container = document.getElementById('salasContainer');
+      container.innerHTML = "";
+
+      const filtroJogo = document.getElementById("filtroJogo").value;
+      const buscaNome = document.getElementById("buscaNome").value.toLowerCase();
+
+      salas
+        .filter(s => (!filtroJogo || s.jogo === filtroJogo))
+        .filter(s => s.nomeSala.toLowerCase().includes(buscaNome))
+        .forEach(sala => {
+          const div = document.createElement("div");
+          div.className = "card mb-3";
+
+          const usuariosOrdenados = sala.usuarios.slice().sort((a, b) => {
+            return ordemRanks.indexOf(b.rank) - ordemRanks.indexOf(a.rank);
+          });
+
+          div.innerHTML = `
+            <div class="card-body">
+              <h5 class="card-title">${sala.nomeSala} - <span class="${classeDoJogo(sala.jogo)}">${sala.jogo}</span></h5>
+              <ul class="list-group list-group-flush mb-2">
+                ${usuariosOrdenados.map(u => `<li class="list-group-item">${u.nome} - ${u.rank}</li>`).join("") || "<li class='list-group-item'>Nenhum usuário</li>"}
+              </ul>
+              <button class="btn btn-sm btn-success" onclick="adicionarUsuario(${sala.id})">Adicionar Usuário</button>
+              <button class="btn btn-sm btn-warning ms-2" onclick="removerUsuario(${sala.id})">Remover Usuário</button>
+            </div>
+          `;
+          container.appendChild(div);
+        });
+    }
+
+    function exportarJSON() {
+      const blob = new Blob([JSON.stringify(salas, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "salas.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importarJSON() {
+      const input = document.getElementById("importarArquivo");
+      const file = input.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const dados = JSON.parse(e.target.result);
+          if (Array.isArray(dados)) {
+            salas = dados;
+            salvar();
+            atualizarExibicao();
+          } else {
+            alert("Arquivo inválido.");
+          }
+        } catch {
+          alert("Erro ao importar JSON.");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    atualizarExibicao();
+  </script>
+
+</body>
+</html>
